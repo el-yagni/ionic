@@ -1,3 +1,6 @@
+
 export const environment = {
-  production: true
+  production: true,
+  api: 'https://apilartodolist.vercel.app/api/api/',
+
 };

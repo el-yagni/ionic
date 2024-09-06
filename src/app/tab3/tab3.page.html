@@ -1,17 +1,28 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Profile 
     </ion-title>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div class="container">
+    <ion-card color="medium">
+      <ion-card-header>
+        <ion-card-title>Name: {{ datas?.name }}</ion-card-title>
+        <ion-card-subtitle>Email: {{ datas?.email }}</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content> Card Content </ion-card-content>
+      <ion-item>
+        <ion-button (click)="logOut()">LOG OUT</ion-button>
+      </ion-item>
+    </ion-card>
+  </div>
+  <app-explore-container  ></app-explore-container>
 </ion-content>
